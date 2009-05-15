@@ -70,7 +70,7 @@ module IBANTools
 
     # The IBAN code in a human-readable format
     def prettify
-      @code.gsub /(.{4})/, '\1 '
+      @code.gsub(/(.{4})/, '\1 ').strip
     end
 
     def self.canonicalize_code( code )
