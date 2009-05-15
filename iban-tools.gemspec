@@ -3,9 +3,10 @@ Gem::Specification.new do |s|
   s.summary = "IBAN validator"
   s.name = 'iban-tools'
   s.version = '0.0.1.1'
+  s.authors = ["Iulian Dogariu"]
+  s.email   = ["code@iuliandogariu.com"]
   s.requirements << 'none'
   s.require_path = 'lib'
-  s.autorequire = 'iban-tools.rb'
   s.files      = [ "README", 
                    "lib/iban-tools.rb", 
 		   "lib/iban-tools/iban.rb" 
