@@ -45,7 +45,7 @@ module IBANTools
     end
 
     def self.canonicalize_code( code )
-      @code = code.strip.gsub(/\s+/, '').upcase
+      code.strip.gsub(/\s+/, '').upcase
     end
 
   end
