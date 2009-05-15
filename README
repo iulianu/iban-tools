@@ -1,18 +1,24 @@
-Installation
+iban-tools is a Ruby library for manipulating and validating
+IBAN account numbers.
+
+Read more about IBAN at:
+http://en.wikipedia.org/wiki/International_Bank_Account_Number
+
+USAGE
+-----
+
+ require 'rubygems'
+ require 'iban-tools'
+ 
+ IBANTools::IBAN.valid? "GB82 WEST 1234 5698 7654 32"
+ => true
+
+
+INSTALLATION
 ------------
 You will need RubyGems 1.2.0 or later.
 
- gem sources -a http://gems.github.com (you only have to do this once)
+ gem sources -a http://gems.github.com
  sudo gem install iulianu-iban-tools
-
-Usage
------
-
- irb(main):001:0> require 'rubygems'
- => true
- irb(main):002:0> require 'iban-tools'
- => true
- irb(main):003:0> IBANTools::IBAN.valid? "GB82 WEST 1234 5698 7654 32"
- => true
 
 
