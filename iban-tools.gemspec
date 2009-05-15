@@ -1,12 +1,10 @@
 require 'rake'
 
-PKG_VERSION='0.0.1'
-
 Gem::Specification.new do |s|
   s.platform = Gem::Platform::RUBY
   s.summary = "IBAN validator"
   s.name = 'iban-tools'
-  s.version = PKG_VERSION
+  s.version = '0.0.1.1'
   s.requirements << 'none'
   s.require_path = 'lib'
   s.autorequire = 'iban-tools.rb'
