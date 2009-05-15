@@ -8,12 +8,13 @@ module IBANTools
     end
 
     def initialize( code )
-      @code = code.gsub /\s+/, ''
+      @code = IBAN.canonicalize_code(code)
     end
 
     def validate
       errors = []
       return [:too_short] if @code.size < 5
+      return [:bad_chars] unless @code =~ /^[A-Z0-9]+$/
       errors << :bad_checksum unless valid_checksum?
       errors
     end
@@ -24,13 +25,27 @@ module IBANTools
 
     def numerify
       (@code[4..-1] + @code[0..3]).chars.map do |ch|
-      	case ch.upcase
-	when '0'..'9'
-	  ch
-	when 'A'..'Z'
-	  (ch[0] - ?A + 10).to_s
-	end
+      	case ch
+	      when '0'..'9'
+          ch
+        when 'A'..'Z'
+          (ch[0] - ?A + 10).to_s
+        else
+          raise RuntimeError.new("Unexpected char '#{ch}' in IBAN code '#{prettify}'")
+        end
       end.join
+    end
+
+    def to_s
+      "#<#{self.class}: #{prettify}>"
+    end
+
+    def prettify
+      @code.gsub /(.{4})/, '\1 '
+    end
+
+    def self.canonicalize_code( code )
+      @code = code.strip.gsub(/\s+/, '').upcase
     end
 
   end
