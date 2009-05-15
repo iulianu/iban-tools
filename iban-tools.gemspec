@@ -1,5 +1,3 @@
-require 'rake'
-
 Gem::Specification.new do |s|
   s.platform = Gem::Platform::RUBY
   s.summary = "IBAN validator"
@@ -8,7 +6,10 @@ Gem::Specification.new do |s|
   s.requirements << 'none'
   s.require_path = 'lib'
   s.autorequire = 'iban-tools.rb'
-  s.files      = FileList["{lib,spec}/**/*"].exclude("rdoc").to_a
+  s.files      = [ "README", 
+                   "lib/iban-tools.rb", 
+		   "lib/iban-tools/iban.rb" 
+		 ]
   s.description = <<EOF
 Validates IBAN account numbers
 EOF
