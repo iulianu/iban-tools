@@ -1,0 +1,242 @@
+# Data from http://www.tbg5-finance.org/?ibandocs.shtml/
+
+"AD":
+  # Andorra
+  length: 24
+  bban_pattern: "\d{8}[A-Z0-9]{12}"
+
+"AL":
+  # Albania
+  length: 28
+  bban_pattern: "\d{8}[A-Z0-9]{16}"
+
+"AT":
+  # Austria
+  length: 20
+  bban_pattern: "\d{16}"
+
+"BA":
+  # Bosnia
+  length: 20
+  bban_pattern: "\d{16}"
+
+"BE":
+  # Belgium
+  length: 16
+  bban_pattern: "\d{12}"
+
+"BG":
+  # Bulgaria
+  length: 22
+  bban_pattern: "[A-Z]{4}\d{6}[A-Z0-9]{8}"
+
+"CH":
+  # Switzerland
+  length: 21
+  bban_pattern: "\d{5}[A-Z0-9]{12}"
+
+"CY":
+  # Cyprus
+  length: 28
+  bban_pattern: "\d{8}[A-Z0-9]{16}"
+
+"CZ":
+  # Czech Republic
+  length: 24
+  bban_pattern: "\d{20}"
+
+"DE":
+  # Germany
+  length: 22
+  bban_pattern: "\d{18}"
+
+"DK":
+  # Denmark
+  length: 18
+  bban_pattern: "\d{14}"
+
+"EE":
+  # Estonia
+  length: 20
+  bban_pattern: "\d{16}"
+
+"ES":
+  # Spain
+  length: 24
+  bban_pattern: "\d{20}"
+
+"FI":
+  # Finland
+  length: 18
+  bban_pattern: "\d{14}"
+
+"FO":
+  # Faroe Islands
+  length: 18
+  bban_pattern: "\d{14}"
+
+"FR":
+  # France
+  length: 27
+  bban_pattern: "\d{10}[A-Z0-9]{11}\d{2}"
+
+"GB":
+  # United Kingdom
+  length: 22
+  bban_pattern: "[A-Z]{4}\d{14}"
+
+"GI":
+  # Gibraltar
+  length: 23
+  bban_pattern: "[A-Z]{4}[A-Z0-9]{15}"
+
+"GL":
+  # Greenland
+  length: 18
+  bban_pattern: "\d{14}"
+
+"GR":
+  # Greece
+  length: 27
+  bban_pattern: "\d{7}[A-Z0-9]{16}"
+
+"HR":
+  # Croatia
+  length: 21
+  bban_pattern: "\d{17}"
+
+"HU":
+  # Hungary
+  length: 28
+  bban_pattern: "\d{24}"
+
+"IE":
+  # Ireland
+  length: 22
+  bban_pattern: "[A-Z]{4}\d{14}"
+
+"IL":
+  # Israel
+  length: 23
+  bban_pattern: "\d{19}"
+
+"IS":
+  # Iceland
+  length: 26
+  bban_pattern: "\d{22}"
+
+"IT":
+  # Italy
+  length: 27
+  bban_pattern: "[A-Z]\d{10}[A-Z0-9]{12}"
+
+"LI":
+  # Liechtenstein
+  length: 21
+  bban_pattern: "\d{5}[A-Z0-9]{12}"
+
+"LT":
+  # Lithuania
+  length: 20
+  bban_pattern: "\d{16}"
+
+"LU":
+  # Luxembourg
+  length: 20
+  bban_pattern: "\d{3}[A-Z0-9]{13}"
+
+"LV":
+  # Latvia
+  length: 21
+  bban_pattern: "[A-Z]{4}[A-Z0-9]{13}"
+
+"MC":
+  # Monaco
+  length: 27
+  bban_pattern: "\d{10}[A-Z0-9]{11}\d{2}"
+
+"ME":
+  # Montenegro
+  length: 22
+  bban_pattern: "\d{18}"
+
+"MK":
+  # Macedonia
+  length: 19
+  bban_pattern: "\d{3}[A-Z0-9]{10}\d{2}"
+
+"MT":
+  # Malta
+  length: 31
+  bban_pattern: "[A-Z]{4}\d{5}[A-Z0-9]{18}"
+
+"MU":
+  # Mauritius
+  length: 30
+  bban_pattern: "[A-Z]{4}\d{19}[A-Z]{3}"
+
+"NL":
+  # Netherlands
+  length: 18
+  bban_pattern: "[A-Z]{4}\d{10}"
+
+"NO":
+  # Norway
+  length: 15
+  bban_pattern: "\d{11}"
+
+"PL":
+  # Poland
+  length: 28
+  bban_pattern: "\d{8}[A-Z0-9]{16}"
+
+"PT":
+  # Portugal
+  length: 25
+  bban_pattern: "\d{21}"
+
+"RO":
+  # Romania
+  length: 24
+  bban_pattern: "[A-Z]{4}[A-Z0-9]{16}"
+
+"RS":
+  # Serbia
+  length: 22
+  bban_pattern: "\d{18}"
+
+"SA":
+  # Saudi Arabia
+  length: 24
+  bban_pattern: "\d{2}[A-Z0-9]{18}"
+
+"SE":
+  # Sweden
+  length: 24
+  bban_pattern: "\d{20}"
+
+"SI":
+  # Slovenia
+  length: 19
+  bban_pattern: "\d{15}"
+
+"SK":
+  # Slovakia
+  length: 24
+  bban_pattern: "\d{20}"
+
+"SM":
+  # San Marino
+  length: 27
+  bban_pattern: "[A-Z]\d{10}[A-Z0-9]{12}"
+
+"TN":
+  # Tunisia
+  length: 24
+  bban_pattern: "\d{20}"
+
+"TR":
+  # Turkey
+  length: 26
+  bban_pattern: "\d{5}[A-Z0-9]{17}"
+
