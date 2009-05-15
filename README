@@ -1,0 +1,18 @@
+Installation
+------------
+You will need RubyGems 1.2.0 or later.
+
+ gem sources -a http://gems.github.com (you only have to do this once)
+ sudo gem install iulianu-iban-tools
+
+Usage
+-----
+
+ irb(main):001:0> require 'rubygems'
+ => true
+ irb(main):002:0> require 'iban-tools'
+ => true
+ irb(main):003:0> IBANTools::IBAN.valid? "GB82 WEST 1234 5698 7654 32"
+ => true
+
+
