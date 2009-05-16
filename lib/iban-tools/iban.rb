@@ -81,7 +81,7 @@ module IBANTools
 
     # Load and cache the default rules from rules.yml
     def self.default_rules
-      @default_rules = IBANRules.defaults
+      @default_rules ||= IBANRules.defaults
     end
 
   end
