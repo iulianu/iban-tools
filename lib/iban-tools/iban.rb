@@ -4,23 +4,23 @@ module IBANTools
   class IBAN
 
     def self.valid?( code, rules = nil )
-      new(code).validate(rules).empty?
+      new(code).validation_errors(rules).empty?
     end
 
     def initialize( code )
       @code = IBAN.canonicalize_code(code)
     end
 
-    def validate( rules = nil )
+    def validation_errors( rules = nil )
       errors = []
       return [:too_short] if @code.size < 5
       return [:bad_chars] unless @code =~ /^[A-Z0-9]+$/
-      errors += validate_against_rules( rules || IBAN.default_rules )
+      errors += validation_errors_against_rules( rules || IBAN.default_rules )
       errors << :bad_check_digits unless valid_check_digits?
       errors
     end
 
-    def validate_against_rules( rules )
+    def validation_errors_against_rules( rules )
       errors = []
       return [:unknown_country_code] if rules[country_code].nil?
       errors << :bad_length if rules[country_code]["length"] != @code.size

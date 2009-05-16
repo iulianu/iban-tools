@@ -15,7 +15,7 @@ USAGE
 
  ### Advanced usage, gives more detailed error messages
 
- IBANTools::IBAN.new("XQ75 BADCODE 666").validate
+ IBANTools::IBAN.new("XQ75 BADCODE 666").validation_errors
  => [:unknown_country_code, :bad_check_digits]
 
  ### Pretty print, canonicalize, and extract fields from an IBAN code

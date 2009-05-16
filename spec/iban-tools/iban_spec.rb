@@ -17,25 +17,25 @@ module IBANTools
       end
 
       it "should reject IBAN code with invalid characters" do
-        IBAN.new("gb99 %BC").validate(@rules).
+        IBAN.new("gb99 %BC").validation_errors(@rules).
           should include(:bad_chars)
       end
 
       it "should reject IBAN code from unknown country" do
         # Norway is not present in @rules
-        IBAN.new("NO9386011117947").validate(@rules).
+        IBAN.new("NO9386011117947").validation_errors(@rules).
           should == [:unknown_country_code]
       end
 
       it "should reject IBAN code that does not match the length for the respective country" do
-        IBAN.new("GB88 WEST 1234 5698 7654 3").validate(@rules).
+        IBAN.new("GB88 WEST 1234 5698 7654 3").validation_errors(@rules).
           should == [:bad_length]
           # Length is 21, should be 22.
           # check digits are good though
       end
 
       it "should reject IBAN code that does not match the pattern for the selected country" do
-        IBAN.new("GB69 7654 1234 5698 7654 32").validate(@rules).
+        IBAN.new("GB69 7654 1234 5698 7654 32").validation_errors(@rules).
           should == [:bad_format]
           # Length and check digits are good,
           # but country pattern calls for chars 4-7 to be letters.
@@ -44,7 +44,7 @@ module IBANTools
       it "should reject IBAN code with invalid check digits" do
         IBAN.valid?( "GB99 WEST 1234 5698 7654 32", @rules ).should be_false
 
-        IBAN.new("GB99 WEST 1234 5698 7654 32").validate(@rules).
+        IBAN.new("GB99 WEST 1234 5698 7654 32").validation_errors(@rules).
           should == [:bad_check_digits]
       end
     end
@@ -112,7 +112,7 @@ module IBANTools
       ].each do |iban_code| 
          describe iban_code do
            it "should be valid" do
-             IBAN.new(iban_code).validate.should == []
+             IBAN.new(iban_code).validation_errors.should == []
            end
          end
       end
