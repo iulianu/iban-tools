@@ -52,16 +52,18 @@ module IBANTools
     end
 
     def numerify
-      (@code[4..-1] + @code[0..3]).chars.map do |ch|
-      	case ch
-	      when '0'..'9'
-          ch
-        when 'A'..'Z'
-          (ch[0] - ?A + 10).to_s
+      numerified = ""
+      (@code[4..-1] + @code[0..3]).each_byte do |byte|
+      	numerified += case byte
+	      when ?0..?9
+          byte.chr
+        when ?A..?Z
+          (byte - ?A + 10).to_s
         else
-          raise RuntimeError.new("Unexpected char '#{ch}' in IBAN code '#{prettify}'")
+          raise RuntimeError.new("Unexpected byte '#{byte.chr}' in IBAN code '#{prettify}'")
         end
-      end.join
+      end
+      numerified
     end
 
     def to_s
