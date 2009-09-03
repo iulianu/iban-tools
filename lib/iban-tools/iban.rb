@@ -60,7 +60,7 @@ module IBANTools
         when 'A'.ord..'Z'.ord
           (byte.ord - 'A'.ord + 10).to_s
         else
-          raise RuntimeError.new("Unexpected byte '#{byte.chr}' in IBAN code '#{prettify}'")
+          raise RuntimeError.new("Unexpected byte '#{byte}' in IBAN code '#{prettify}'")
         end
       end
       numerified
