@@ -2,7 +2,7 @@ Gem::Specification.new do |s|
   s.platform = Gem::Platform::RUBY
   s.summary = "IBAN validator"
   s.name = 'iban-tools'
-  s.version = '0.0.4'
+  s.version = '0.0.5'
   s.authors = ["Iulian Dogariu"]
   s.email   = ["code@iuliandogariu.com"]
   s.requirements << 'none'
