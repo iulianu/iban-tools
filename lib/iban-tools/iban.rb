@@ -54,11 +54,11 @@ module IBANTools
     def numerify
       numerified = ""
       (@code[4..-1] + @code[0..3]).each_byte do |byte|
-      	numerified += case byte
-	      when '0'.ord..'9'.ord
-          byte.chr
-        when 'A'.ord..'Z'.ord
-          (byte - 'A'.ord + 10).to_s
+        numerified += case byte
+        # 0..9
+        when 48..57 then byte.chr
+        # 'A'..'Z'
+        when 65..90 then (byte - 55).to_s # 55 = 'A'.ord + 10
         else
           raise RuntimeError.new("Unexpected byte '#{byte}' in IBAN code '#{prettify}'")
         end
@@ -84,13 +84,5 @@ module IBANTools
       @default_rules ||= IBANRules.defaults
     end
 
-  end
-end
-
-if RUBY_VERSION < '1.9.0'
-  class String
-    def ord
-      self[0]
-    end
   end
 end
