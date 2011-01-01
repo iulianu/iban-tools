@@ -21,7 +21,7 @@ module IBANTools
     def self.load_from_string( string )
       rule_hash = YAML.load(string)
       rule_hash.each do |country_code, specs|
-        specs["bban_pattern"] = Regexp.new(specs["bban_pattern"])
+        specs["bban_pattern"] = Regexp.new("^" + specs["bban_pattern"] + "$")
       end
       IBANRules.new(rule_hash)
     end
