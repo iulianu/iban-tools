@@ -85,6 +85,11 @@
   length: 22
   bban_pattern: "[A-Z]{4}\d{14}"
 
+"GE":
+  # Georgia
+  length: 22
+  bban_pattern: "[A-Z]{2}\d{16}"
+
 "GI":
   # Gibraltar
   length: 23
@@ -129,6 +134,16 @@
   # Italy
   length: 27
   bban_pattern: "[A-Z]\d{10}[A-Z0-9]{12}"
+
+"KW":
+  # Kuwait
+  length: 30
+  bban_pattern: "[A-Z]{4}\d{22}"
+
+"KZ":
+  # Kazakhstan
+  length: 20
+  bban_pattern: "\d{3}[A-Z]{3}\d{10}"
 
 "LI":
   # Liechtenstein
