@@ -5,6 +5,11 @@
   length: 24
   bban_pattern: "\d{8}[A-Z0-9]{12}"
 
+"AE":
+  # United Arab Emirates
+  length: 23
+  bban_pattern: "\d{19}"
+
 "AL":
   # Albania
   length: 28
@@ -145,6 +150,11 @@
   length: 20
   bban_pattern: "\d{3}[A-Z]{3}\d{10}"
 
+"LB":
+  # Lebanon
+  length: 28
+  bban_pattern: "\d{4}[A-Z0-9]{20}"
+
 "LI":
   # Liechtenstein
   length: 21
@@ -179,6 +189,11 @@
   # Macedonia
   length: 19
   bban_pattern: "\d{3}[A-Z0-9]{10}\d{2}"
+
+"MR":
+  # Mauritania
+  length: 27
+  bban_pattern: "\d{23}"
 
 "MT":
   # Malta
