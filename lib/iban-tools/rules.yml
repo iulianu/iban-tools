@@ -35,6 +35,11 @@
   length: 22
   bban_pattern: "[A-Z]{4}\d{6}[A-Z0-9]{8}"
 
+"BH":
+  # Bahrain
+  length: 22
+  bban_pattern: "[A-Z]{4}[A-Z0-9]{14}"
+
 "CH":
   # Switzerland
   length: 21
@@ -59,6 +64,11 @@
   # Denmark
   length: 18
   bban_pattern: "\d{14}"
+
+"DO":
+  # Dominican Republic
+  length: 28
+  bban_pattern: "[A-Z]{4}\d{20}"
 
 "EE":
   # Estonia
