@@ -1,282 +1,282 @@
 # Data from http://www.tbg5-finance.org/?ibandocs.shtml/
 
-"AD":
+'AD':
   # Andorra
   length: 24
-  bban_pattern: "\d{8}[A-Z0-9]{12}"
+  bban_pattern: '\d{8}[A-Z0-9]{12}'
 
-"AE":
+'AE':
   # United Arab Emirates
   length: 23
-  bban_pattern: "\d{19}"
+  bban_pattern: '\d{19}'
 
-"AL":
+'AL':
   # Albania
   length: 28
-  bban_pattern: "\d{8}[A-Z0-9]{16}"
+  bban_pattern: '\d{8}[A-Z0-9]{16}'
 
-"AT":
+'AT':
   # Austria
   length: 20
-  bban_pattern: "\d{16}"
+  bban_pattern: '\d{16}'
 
-"BA":
+'BA':
   # Bosnia
   length: 20
-  bban_pattern: "\d{16}"
+  bban_pattern: '\d{16}'
 
-"BE":
+'BE':
   # Belgium
   length: 16
-  bban_pattern: "\d{12}"
+  bban_pattern: '\d{12}'
 
-"BG":
+'BG':
   # Bulgaria
   length: 22
-  bban_pattern: "[A-Z]{4}\d{6}[A-Z0-9]{8}"
+  bban_pattern: '[A-Z]{4}\d{6}[A-Z0-9]{8}'
 
-"BH":
+'BH':
   # Bahrain
   length: 22
-  bban_pattern: "[A-Z]{4}[A-Z0-9]{14}"
+  bban_pattern: '[A-Z]{4}[A-Z0-9]{14}'
 
-"CH":
+'CH':
   # Switzerland
   length: 21
-  bban_pattern: "\d{5}[A-Z0-9]{12}"
+  bban_pattern: '\d{5}[A-Z0-9]{12}'
 
-"CY":
+'CY':
   # Cyprus
   length: 28
-  bban_pattern: "\d{8}[A-Z0-9]{16}"
+  bban_pattern: '\d{8}[A-Z0-9]{16}'
 
-"CZ":
+'CZ':
   # Czech Republic
   length: 24
-  bban_pattern: "\d{20}"
+  bban_pattern: '\d{20}'
 
-"DE":
+'DE':
   # Germany
   length: 22
-  bban_pattern: "\d{18}"
+  bban_pattern: '\d{18}'
 
-"DK":
+'DK':
   # Denmark
   length: 18
-  bban_pattern: "\d{14}"
+  bban_pattern: '\d{14}'
 
-"DO":
+'DO':
   # Dominican Republic
   length: 28
-  bban_pattern: "[A-Z]{4}\d{20}"
+  bban_pattern: '[A-Z]{4}\d{20}'
 
-"EE":
+'EE':
   # Estonia
   length: 20
-  bban_pattern: "\d{16}"
+  bban_pattern: '\d{16}'
 
-"ES":
+'ES':
   # Spain
   length: 24
-  bban_pattern: "\d{20}"
+  bban_pattern: '\d{20}'
 
-"FI":
+'FI':
   # Finland
   length: 18
-  bban_pattern: "\d{14}"
+  bban_pattern: '\d{14}'
 
-"FO":
+'FO':
   # Faroe Islands
   length: 18
-  bban_pattern: "\d{14}"
+  bban_pattern: '\d{14}'
 
-"FR":
+'FR':
   # France
   length: 27
-  bban_pattern: "\d{10}[A-Z0-9]{11}\d{2}"
+  bban_pattern: '\d{10}[A-Z0-9]{11}\d{2}'
 
-"GB":
+'GB':
   # United Kingdom
   length: 22
-  bban_pattern: "[A-Z]{4}\d{14}"
+  bban_pattern: '[A-Z]{4}\d{14}'
 
-"GE":
+'GE':
   # Georgia
   length: 22
-  bban_pattern: "[A-Z]{2}\d{16}"
+  bban_pattern: '[A-Z]{2}\d{16}'
 
-"GI":
+'GI':
   # Gibraltar
   length: 23
-  bban_pattern: "[A-Z]{4}[A-Z0-9]{15}"
+  bban_pattern: '[A-Z]{4}[A-Z0-9]{15}'
 
-"GL":
+'GL':
   # Greenland
   length: 18
-  bban_pattern: "\d{14}"
+  bban_pattern: '\d{14}'
 
-"GR":
+'GR':
   # Greece
   length: 27
-  bban_pattern: "\d{7}[A-Z0-9]{16}"
+  bban_pattern: '\d{7}[A-Z0-9]{16}'
 
-"HR":
+'HR':
   # Croatia
   length: 21
-  bban_pattern: "\d{17}"
+  bban_pattern: '\d{17}'
 
-"HU":
+'HU':
   # Hungary
   length: 28
-  bban_pattern: "\d{24}"
+  bban_pattern: '\d{24}'
 
-"IE":
+'IE':
   # Ireland
   length: 22
-  bban_pattern: "[A-Z]{4}\d{14}"
+  bban_pattern: '[A-Z]{4}\d{14}'
 
-"IL":
+'IL':
   # Israel
   length: 23
-  bban_pattern: "\d{19}"
+  bban_pattern: '\d{19}'
 
-"IS":
+'IS':
   # Iceland
   length: 26
-  bban_pattern: "\d{22}"
+  bban_pattern: '\d{22}'
 
-"IT":
+'IT':
   # Italy
   length: 27
-  bban_pattern: "[A-Z]\d{10}[A-Z0-9]{12}"
+  bban_pattern: '[A-Z]\d{10}[A-Z0-9]{12}'
 
-"KW":
+'KW':
   # Kuwait
   length: 30
-  bban_pattern: "[A-Z]{4}\d{22}"
+  bban_pattern: '[A-Z]{4}\d{22}'
 
-"KZ":
+'KZ':
   # Kazakhstan
   length: 20
-  bban_pattern: "\d{3}[A-Z]{3}\d{10}"
+  bban_pattern: '\d{3}[A-Z]{3}\d{10}'
 
-"LB":
+'LB':
   # Lebanon
   length: 28
-  bban_pattern: "\d{4}[A-Z0-9]{20}"
+  bban_pattern: '\d{4}[A-Z0-9]{20}'
 
-"LI":
+'LI':
   # Liechtenstein
   length: 21
-  bban_pattern: "\d{5}[A-Z0-9]{12}"
+  bban_pattern: '\d{5}[A-Z0-9]{12}'
 
-"LT":
+'LT':
   # Lithuania
   length: 20
-  bban_pattern: "\d{16}"
+  bban_pattern: '\d{16}'
 
-"LU":
+'LU':
   # Luxembourg
   length: 20
-  bban_pattern: "\d{3}[A-Z0-9]{13}"
+  bban_pattern: '\d{3}[A-Z0-9]{13}'
 
-"LV":
+'LV':
   # Latvia
   length: 21
-  bban_pattern: "[A-Z]{4}[A-Z0-9]{13}"
+  bban_pattern: '[A-Z]{4}[A-Z0-9]{13}'
 
-"MC":
+'MC':
   # Monaco
   length: 27
-  bban_pattern: "\d{10}[A-Z0-9]{11}\d{2}"
+  bban_pattern: '\d{10}[A-Z0-9]{11}\d{2}'
 
-"ME":
+'ME':
   # Montenegro
   length: 22
-  bban_pattern: "\d{18}"
+  bban_pattern: '\d{18}'
 
-"MK":
+'MK':
   # Macedonia
   length: 19
-  bban_pattern: "\d{3}[A-Z0-9]{10}\d{2}"
+  bban_pattern: '\d{3}[A-Z0-9]{10}\d{2}'
 
-"MR":
+'MR':
   # Mauritania
   length: 27
-  bban_pattern: "\d{23}"
+  bban_pattern: '\d{23}'
 
-"MT":
+'MT':
   # Malta
   length: 31
-  bban_pattern: "[A-Z]{4}\d{5}[A-Z0-9]{18}"
+  bban_pattern: '[A-Z]{4}\d{5}[A-Z0-9]{18}'
 
-"MU":
+'MU':
   # Mauritius
   length: 30
-  bban_pattern: "[A-Z]{4}\d{19}[A-Z]{3}"
+  bban_pattern: '[A-Z]{4}\d{19}[A-Z]{3}'
 
-"NL":
+'NL':
   # Netherlands
   length: 18
-  bban_pattern: "[A-Z]{4}\d{10}"
+  bban_pattern: '[A-Z]{4}\d{10}'
 
-"NO":
+'NO':
   # Norway
   length: 15
-  bban_pattern: "\d{11}"
+  bban_pattern: '\d{11}'
 
-"PL":
+'PL':
   # Poland
   length: 28
-  bban_pattern: "\d{8}[A-Z0-9]{16}"
+  bban_pattern: '\d{8}[A-Z0-9]{16}'
 
-"PT":
+'PT':
   # Portugal
   length: 25
-  bban_pattern: "\d{21}"
+  bban_pattern: '\d{21}'
 
-"RO":
+'RO':
   # Romania
   length: 24
-  bban_pattern: "[A-Z]{4}[A-Z0-9]{16}"
+  bban_pattern: '[A-Z]{4}[A-Z0-9]{16}'
 
-"RS":
+'RS':
   # Serbia
   length: 22
-  bban_pattern: "\d{18}"
+  bban_pattern: '\d{18}'
 
-"SA":
+'SA':
   # Saudi Arabia
   length: 24
-  bban_pattern: "\d{2}[A-Z0-9]{18}"
+  bban_pattern: '\d{2}[A-Z0-9]{18}'
 
-"SE":
+'SE':
   # Sweden
   length: 24
-  bban_pattern: "\d{20}"
+  bban_pattern: '\d{20}'
 
-"SI":
+'SI':
   # Slovenia
   length: 19
-  bban_pattern: "\d{15}"
+  bban_pattern: '\d{15}'
 
-"SK":
+'SK':
   # Slovakia
   length: 24
-  bban_pattern: "\d{20}"
+  bban_pattern: '\d{20}'
 
-"SM":
+'SM':
   # San Marino
   length: 27
-  bban_pattern: "[A-Z]\d{10}[A-Z0-9]{12}"
+  bban_pattern: '[A-Z]\d{10}[A-Z0-9]{12}'
 
-"TN":
+'TN':
   # Tunisia
   length: 24
-  bban_pattern: "\d{20}"
+  bban_pattern: '\d{20}'
 
-"TR":
+'TR':
   # Turkey
   length: 26
-  bban_pattern: "\d{5}[A-Z0-9]{17}"
+  bban_pattern: '\d{5}[A-Z0-9]{17}'
 
