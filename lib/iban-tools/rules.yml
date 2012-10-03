@@ -158,7 +158,7 @@
 'KZ':
   # Kazakhstan
   length: 20
-  bban_pattern: '\d{3}[A-Z]{3}\d{10}'
+  bban_pattern: '\d{3}[A-Z0-9]{13}'
 
 'LB':
   # Lebanon
