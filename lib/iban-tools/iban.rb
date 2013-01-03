@@ -7,6 +7,31 @@ module IBANTools
       new(code).validation_errors(rules).empty?
     end
 
+    def self.canonicalize_code( code )
+      code.strip.gsub(/\s+/, '').upcase
+    end
+
+    # Load and cache the default rules from rules.yml
+    def self.default_rules
+      @default_rules ||= IBANRules.defaults
+    end
+
+    def self.from_local(data)
+      country_code = data.delete(:country_code)
+
+      blz = "%08d" % data.delete(:blz)
+      account_number = "%010d" % data.delete(:account_number)
+      bban = "#{blz}#{account_number}"
+
+      check_digits = checksum country_code, bban
+
+      IBAN.new "#{country_code}#{check_digits}#{bban}"
+    end
+
+    def self.checksum(country_code, bban)
+      97 - (IBAN.new("#{country_code}00#{bban}").numerify.to_i % 97) + 1
+    end
+
     def initialize( code )
       @code = IBAN.canonicalize_code(code)
     end
@@ -74,15 +99,5 @@ module IBANTools
     def prettify
       @code.gsub(/(.{4})/, '\1 ').strip
     end
-
-    def self.canonicalize_code( code )
-      code.strip.gsub(/\s+/, '').upcase
-    end
-
-    # Load and cache the default rules from rules.yml
-    def self.default_rules
-      @default_rules ||= IBANRules.defaults
-    end
-
   end
 end
