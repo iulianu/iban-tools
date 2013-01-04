@@ -20,12 +20,12 @@ module IBANTools
       Conversion.local2iban country_code, data
     end
 
-    def to_local
-      Conversion.iban2local country_code, bban
-    end
-
     def initialize( code )
       @code = IBAN.canonicalize_code(code)
+    end
+
+    def to_local
+      Conversion.iban2local country_code, bban
     end
 
     def validation_errors( rules = nil )
