@@ -1,5 +1,7 @@
 # iban-tools
 
+[![Build Status](https://travis-ci.org/opahk/iban-tools.png?branch=master)](https://travis-ci.org/opahk/iban-tools)
+
 iban-tools is a Ruby library for manipulating and validating IBAN account numbers. You can [read more about IBAN](http://en.wikipedia.org/wiki/International_Bank_Account_Number) on Wikipedia
 
 ## INSTALLATION
@@ -35,4 +37,4 @@ Pretty print, canonicalize, and extract fields from an IBAN code
 
 ## Credit
 
-[Iulianu](http://github.com/iulianu) wrote [iban-tools](http://github.com/iulianu/iban-tools). ([AlphaSights](http://dev.alphasights.com)) is now maintaining the gem. 
+[Iulianu](http://github.com/iulianu) wrote [iban-tools](http://github.com/iulianu/iban-tools). ([AlphaSights](http://dev.alphasights.com)) is now maintaining the gem.
