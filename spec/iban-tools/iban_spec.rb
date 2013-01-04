@@ -165,5 +165,15 @@ module IBANTools
 
     end
 
+    describe '::from_local' do
+      [[{ country_code: 'DE', blz: '37040044', account_number: '532013000' },
+        "DE89370400440532013000"]]
+        .each do |input, output|
+
+        it "generates iban #{output} from #{input}" do
+          IBAN.from_local(input).code.should == output
+        end
+      end
+    end
   end
 end
