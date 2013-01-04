@@ -24,3 +24,4 @@
 
 require 'iban-tools/iban.rb'
 require 'iban-tools/iban_rules.rb'
+require 'iban-tools/conversion.rb'

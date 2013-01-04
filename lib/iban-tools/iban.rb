@@ -16,20 +16,12 @@ module IBANTools
       @default_rules ||= IBANRules.defaults
     end
 
-    def self.from_local(data)
-      country_code = data.delete(:country_code)
-
-      blz = "%08d" % data.delete(:blz)
-      account_number = "%010d" % data.delete(:account_number)
-      bban = "#{blz}#{account_number}"
-
-      check_digits = checksum country_code, bban
-
-      IBAN.new "#{country_code}#{check_digits}#{bban}"
+    def self.from_local(country_code, data)
+      Conversion.local2iban country_code, data
     end
 
-    def self.checksum(country_code, bban)
-      97 - (IBAN.new("#{country_code}00#{bban}").numerify.to_i % 97) + 1
+    def to_local
+      Conversion.iban2local country_code, bban
     end
 
     def initialize( code )

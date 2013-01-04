@@ -10,6 +10,8 @@ Gem::Specification.new do |s|
   s.files        = [
     "README.md",
     "lib/iban-tools.rb",
+    "lib/iban-tools/conversion.rb",
+    "lib/iban-tools/conversion_rules.yml",
     "lib/iban-tools/iban.rb",
     "lib/iban-tools/iban_rules.rb",
     "lib/iban-tools/rules.yml"

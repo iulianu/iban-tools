@@ -147,14 +147,6 @@ module IBANTools
             IBAN.new(iban_code).validation_errors.should == []
           end
         end
-
-        describe "::checksum #{iban_code}" do
-          it 'calculates correct value' do
-            iban = IBAN.new iban_code
-            IBAN.checksum(iban.country_code, iban.bban).
-              should == iban.check_digits.to_i
-          end
-        end
       end
 
       it "should fail known pattern violations" do
@@ -166,14 +158,14 @@ module IBANTools
     end
 
     describe '::from_local' do
-      [[{ :country_code => 'DE',
+      [[['DE', {
           :blz => '37040044',
-          :account_number => '532013000' },
+          :account_number => '532013000' }],
         "DE89370400440532013000"]].
         each do |input, output|
 
         it "generates iban #{output} from #{input}" do
-          IBAN.from_local(input).code.should == output
+          IBAN.from_local(*input).code.should == output
         end
       end
     end
