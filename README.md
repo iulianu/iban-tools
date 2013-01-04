@@ -1,10 +1,5 @@
 # iban-tools
 
-[![Code Coverage](https://coveralls.io/repos/opahk/iban-tools/badge.png?branch=master)](https://coveralls.io/r/opahk/iban-tools)
-[![Build Status](https://travis-ci.org/opahk/iban-tools.png?branch=master)](https://travis-ci.org/opahk/iban-tools)
-[![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/opahk/iban-tools)
-[![Dependency Status](https://gemnasium.com/opahk/iban-tools.png)](https://gemnasium.com/opahk/iban-tools)
-
 iban-tools is a Ruby library for manipulating and validating IBAN account numbers. You can [read more about IBAN](http://en.wikipedia.org/wiki/International_Bank_Account_Number) on Wikipedia
 
 ## INSTALLATION
