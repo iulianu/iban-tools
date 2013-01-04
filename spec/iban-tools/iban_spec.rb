@@ -1,9 +1,6 @@
 # vim:ts=2:sw=2:et:
 
-require 'iban-tools'
-
-require 'coveralls'
-Coveralls.wear!
+require 'spec_helper'
 
 module IBANTools
   describe IBAN do
