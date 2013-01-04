@@ -2,9 +2,12 @@
 
 require 'iban-tools'
 
+require 'coveralls'
+Coveralls.wear!
+
 module IBANTools
   describe IBAN do
-  
+
     describe "with test rules" do
 
       before(:each) do
@@ -81,7 +84,7 @@ module IBANTools
     end
 
     describe "with default rules" do
-      
+
       # Rules are loaded from lib/iban-tools/rules.yml
       # Samples from http://www.tbg5-finance.org/?ibandocs.shtml/
 
@@ -141,7 +144,7 @@ module IBANTools
         "SM86U0322509800000000270100",
         "TN5914207207100707129648",
         "TR330006100519786457841326"
-      ].each do |iban_code| 
+      ].each do |iban_code|
          describe iban_code do
            it "should be valid" do
              IBAN.new(iban_code).validation_errors.should == []
