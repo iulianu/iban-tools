@@ -142,11 +142,19 @@ module IBANTools
         "TN5914207207100707129648",
         "TR330006100519786457841326"
       ].each do |iban_code|
-         describe iban_code do
-           it "should be valid" do
-             IBAN.new(iban_code).validation_errors.should == []
-           end
-         end
+        describe iban_code do
+          it "should be valid" do
+            IBAN.new(iban_code).validation_errors.should == []
+          end
+        end
+
+        describe "::checksum #{iban_code}" do
+          it 'calculates correct value' do
+            iban = IBAN.new iban_code
+            IBAN.checksum(iban.country_code, iban.bban)
+              .should == iban.check_digits.to_i
+          end
+        end
       end
 
       it "should fail known pattern violations" do
