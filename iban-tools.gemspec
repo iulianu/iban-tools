@@ -15,4 +15,6 @@ Gem::Specification.new do |s|
     "lib/iban-tools/rules.yml"
   ]
   s.description  = "Validates IBAN account numbers"
+
+  s.add_development_dependency "rspec"
 end
