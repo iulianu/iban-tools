@@ -1,10 +1,10 @@
 # vim:ts=2:sw=2:et:
 
-require 'iban-tools'
+require 'spec_helper'
 
 module IBANTools
   describe IBAN do
-  
+
     describe "with test rules" do
 
       before(:each) do
@@ -81,7 +81,7 @@ module IBANTools
     end
 
     describe "with default rules" do
-      
+
       # Rules are loaded from lib/iban-tools/rules.yml
       # Samples from http://www.tbg5-finance.org/?ibandocs.shtml/
 
@@ -141,12 +141,12 @@ module IBANTools
         "SM86U0322509800000000270100",
         "TN5914207207100707129648",
         "TR330006100519786457841326"
-      ].each do |iban_code| 
-         describe iban_code do
-           it "should be valid" do
-             IBAN.new(iban_code).validation_errors.should == []
-           end
-         end
+      ].each do |iban_code|
+        describe iban_code do
+          it "should be valid" do
+            IBAN.new(iban_code).validation_errors.should == []
+          end
+        end
       end
 
       it "should fail known pattern violations" do
@@ -157,5 +157,17 @@ module IBANTools
 
     end
 
+    describe '::from_local' do
+      [[['DE', {
+          :blz => '37040044',
+          :account_number => '532013000' }],
+        "DE89370400440532013000"]].
+        each do |input, output|
+
+        it "generates iban #{output} from #{input}" do
+          IBAN.from_local(*input).code.should == output
+        end
+      end
+    end
   end
 end
