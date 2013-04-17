@@ -47,6 +47,14 @@ module IBANTools
         IBAN.new("GB99 WEST 1234 5698 7654 32").validation_errors(@rules).
           should == [:bad_check_digits]
       end
+
+      it "should reject IBAN which is not an instance of String" do
+        IBAN.valid?( 12345698765432 ).should be_false
+      end
+
+      it "should reject IBAN which is nil" do
+        IBAN.valid?( nil ).should be_false
+      end
     end
 
     it "should numerify IBAN code" do

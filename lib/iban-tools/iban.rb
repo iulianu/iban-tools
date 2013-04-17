@@ -4,6 +4,7 @@ module IBANTools
   class IBAN
 
     def self.valid?( code, rules = nil )
+      return false unless code.instance_of?(String)
       new(code).validation_errors(rules).empty?
     end
 
