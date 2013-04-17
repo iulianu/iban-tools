@@ -8,7 +8,7 @@ module IBANTools
         value[1] % data[key.to_sym]
       end.join('')
 
-      check_digits = checksum country_code, bban
+      check_digits = "%02d" % checksum(country_code, bban)
 
       IBAN.new "#{country_code}#{check_digits}#{bban}"
     end

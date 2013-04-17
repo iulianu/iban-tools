@@ -10,6 +10,11 @@ module IBANTools
             local2iban('DE', :blz => '1234123', :account_number => '12341234')
           iban.should be_valid_check_digits
         end
+        it 'returns valid IBAN, when checksum is <10' do
+          iban = Conversion.
+            local2iban('DE', :blz => '32050000', :account_number => '46463055')
+          iban.should be_valid_check_digits
+        end
       end
     end
 
