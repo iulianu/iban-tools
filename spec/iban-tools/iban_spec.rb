@@ -48,7 +48,7 @@ module IBANTools
           should == [:bad_check_digits]
       end
 
-      it "should reject IBAN which is not an instance of String" do
+      it "should handle non-string ibans" do
         IBAN.valid?( 12345698765432 ).should be_false
       end
 
