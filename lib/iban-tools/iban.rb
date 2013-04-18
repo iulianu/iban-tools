@@ -8,7 +8,7 @@ module IBANTools
     end
 
     def self.canonicalize_code( code )
-      code.strip.gsub(/\s+/, '').upcase
+      code.to_s.strip.gsub(/\s+/, '').upcase
     end
 
     # Load and cache the default rules from rules.yml
