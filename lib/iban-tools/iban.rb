@@ -4,12 +4,11 @@ module IBANTools
   class IBAN
 
     def self.valid?( code, rules = nil )
-      return false unless code.instance_of?(String)
       new(code).validation_errors(rules).empty?
     end
 
     def self.canonicalize_code( code )
-      code.strip.gsub(/\s+/, '').upcase
+      code.to_s.strip.gsub(/\s+/, '').upcase
     end
 
     # Load and cache the default rules from rules.yml
