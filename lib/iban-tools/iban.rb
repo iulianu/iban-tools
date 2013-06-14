@@ -130,5 +130,12 @@ module IBANTools
       @default_rules ||= IBANRules.defaults
     end
 
+    # Generate correct check digits and change them in IBAN
+    def generate_check_digits
+      @code[2..3] = '00'
+      modulo = numerify.to_i % 97
+      @code[2..3] = sprintf("%02d", 98 - modulo)
+    end
+
   end
 end
