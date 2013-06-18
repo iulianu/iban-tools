@@ -47,50 +47,20 @@ module IBANTools
       @code[4..-1]
     end
 
+    def bban_fields(rules = nil)
+      rules ||= IBAN.default_rules
+      rules[country_code]['bban_pattern'].match(bban) || {}
+    end
+
     # Return country-specific bank identifier
-    def bank_id
-      self.send("#{country_code.downcase}_bank_id")
+    def bank_id(rules = nil)
+      bban_fields(rules)[:bank_id]
     end
 
     # Return country-specific account number
-    def account_number
-      self.send("#{country_code.downcase}_account_number")
-    end
-
-    # Return bank identifier code for Dutch banks
-    def nl_bank_id
-      if country_code == 'NL'
-        bban[0..3]
-      else
-        nil
-      end
-    end
-
-    # Return legacy Dutch bank account numbers
-    def nl_account_number
-      if country_code == 'NL'
-        bban[4..-1].sub(/^0*/, '')
-      else
-        nil
-      end
-    end
-
-    # Return Bankleitzahl for German banks
-    def de_bank_id
-      if country_code == 'DE'
-        bban[0..7]
-      else
-        nil
-      end
-    end
-
-    # Return legacy German Kontonummer
-    def de_account_number
-      if country_code == 'DE'
-        bban[8..-1].sub(/^0*/, '')
-      else
-        nil
-      end
+    def account_number(rules = nil)
+      account = bban_fields(rules)[:account_number]
+      account ? account.sub(/^0+/, '') : nil
     end
 
     def valid_check_digits?

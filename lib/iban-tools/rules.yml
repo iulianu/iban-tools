@@ -28,7 +28,7 @@
 'BE':
   # Belgium
   length: 16
-  bban_pattern: '\d{12}'
+  bban_pattern: '(?<bank_id>\d{3})(?<account_number>\d{9})'
 
 'BG':
   # Bulgaria
@@ -58,7 +58,7 @@
 'DE':
   # Germany
   length: 22
-  bban_pattern: '\d{18}'
+  bban_pattern: '(?<bank_id>\d{8})(?<account_number>\d{10})'
 
 'DK':
   # Denmark
@@ -218,7 +218,7 @@
 'NL':
   # Netherlands
   length: 18
-  bban_pattern: '[A-Z]{4}\d{10}'
+  bban_pattern: '(?<bank_id>[A-Z]{4})(?<account_number>\d{10})'
 
 'NO':
   # Norway
