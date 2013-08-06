@@ -54,13 +54,22 @@ module IBANTools
 
     # Return country-specific bank identifier
     def bank_id(rules = nil)
-      bban_fields(rules)[:bank_id]
+      fields = bban_fields(rules)
+      if fields.names.include? 'bank_id'
+        fields[:bank_id]
+      else
+        nil
+      end
     end
 
     # Return country-specific account number
     def account_number(rules = nil)
-      account = bban_fields(rules)[:account_number]
-      account ? account.sub(/^0+/, '') : nil
+      fields = bban_fields(rules)
+      if fields.names.include? 'account_number'
+        fields[:account_number].sub(/^0+/, '')
+      else
+        nil
+      end
     end
 
     def valid_check_digits?
