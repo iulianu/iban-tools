@@ -1,3 +1,6 @@
 'DE':
   blz: ['\d{8}', "%08d"]
   account_number: ['\d{10}', "%010d"]
+
+'ES':
+  account_number: ['\d{20}', "%020d"]
