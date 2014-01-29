@@ -15,6 +15,11 @@ module IBANTools
             local2iban('DE', :blz => '32050000', :account_number => '46463055')
           iban.should be_valid_check_digits
         end
+        it 'returns valid IBAN for ES' do
+          iban = Conversion.
+            local2iban('ES', :account_number => '20811234761234567890')
+          iban.should be_valid_check_digits
+        end
       end
     end
 
@@ -23,6 +28,10 @@ module IBANTools
         it 'returns valid local data' do
           local = Conversion.iban2local 'DE', '012341230012341234'
           local.should == { :blz => '1234123', :account_number => '12341234' }
+        end
+        it 'returns valid local data for ES' do
+          local = Conversion.iban2local 'ES', '20811234761234567890'
+          local.should == { :account_number => '20811234761234567890' }
         end
       end
     end
