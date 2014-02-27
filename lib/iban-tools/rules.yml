@@ -20,6 +20,11 @@
   length: 20
   bban_pattern: '\d{16}'
 
+'AZ':
+  # Azerbaijan
+  length: 28
+  bban_pattern: '[A-Z]{4}[A-Z0-9]{20}'
+
 'BA':
   # Bosnia
   length: 20
@@ -150,6 +155,11 @@
   length: 27
   bban_pattern: '[A-Z]\d{10}[A-Z0-9]{12}'
 
+'JO':
+  # Jordan
+  length: 30
+  bban_pattern: '[A-Z]{4}\d{4}[A-Z0-9]{18}'
+
 'KW':
   # Kuwait
   length: 30
@@ -190,6 +200,11 @@
   length: 27
   bban_pattern: '\d{10}[A-Z0-9]{11}\d{2}'
 
+'MD':
+  # Moldova
+  length: 24
+  bban_pattern: '[A-Z0-9]{20}'
+
 'ME':
   # Montenegro
   length: 22
@@ -225,6 +240,11 @@
   length: 15
   bban_pattern: '\d{11}'
 
+'PK':
+  # Pakistan
+  length: 24
+  bban_pattern: '[A-Z]{4}[A-Z0-9]{16}'
+
 'PL':
   # Poland
   length: 28
@@ -234,6 +254,11 @@
   # Portugal
   length: 25
   bban_pattern: '\d{21}'
+
+'QA':
+  # Quatar
+  length: 29
+  bban_pattern: '[A-Z]{4}[A-Z0-9]{21}'
 
 'RO':
   # Romania
