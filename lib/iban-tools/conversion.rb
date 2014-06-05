@@ -70,6 +70,9 @@ module IBANTools
     def self.load_config(country_code)
       default_config = YAML.
         load_file(File.join(File.dirname(__FILE__), 'conversion_rules.yml'))
+      unless default_config.key?(country_code)
+        raise ArgumentError, "Country code #{country_code} not availble"
+      end
       default_config[country_code]
     end
 
