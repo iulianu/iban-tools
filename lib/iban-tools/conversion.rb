@@ -33,7 +33,7 @@ module IBANTools
 
     def self.load_config(country_code)
       default_config = YAML.
-        load(File.read(File.dirname(__FILE__) + '/conversion_rules.yml'))
+        load_file(File.join(File.dirname(__FILE__), 'conversion_rules.yml'))
       default_config[country_code]
     end
 
