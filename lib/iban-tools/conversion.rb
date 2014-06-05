@@ -4,9 +4,14 @@ module IBANTools
     def self.local2iban(country_code, data)
       config = load_config country_code
 
-      bban = config.map do |key, value|
-        ret = bban_format_to_format_string(value) %
-          data[key.to_sym]
+      bban = config.map do |key, values|
+        d = data[key.to_sym].dup
+        ret = [values].flatten.map do |value|
+          l = bban_format_length(value)
+          r = bban_format_to_format_string(value) % d[0..(l-1)]
+          d[0..(l-1)] = ''
+          r
+        end.join('')
         # "%05s" % "a" -> "    a" and not "0000a"
         ret.gsub(/ /, '0')
       end.join('')
@@ -21,11 +26,15 @@ module IBANTools
       config = load_config country_code
 
       local = {}
-      config.map do |key, value|
-        regexp = /^#{bban_format_to_regexp(value)}/
-        local[key.to_sym] = bban.scan(regexp).first.sub(/^0+/, '')
+      config.map do |key, values|
+        local[key.to_sym] = [values].flatten.map do |value|
+          regexp = /^#{bban_format_to_regexp(value)}/
+          ret = bban.scan(regexp).first
+          bban.sub! regexp, ''
+          ret
+        end.join('')
+        local[key.to_sym].sub!(/^0+/, '')
         local[key.to_sym] = '0' if local[key.to_sym] == ''
-        bban.sub! regexp, ''
       end
       local
     end
@@ -33,6 +42,14 @@ module IBANTools
     private
 
     BBAN_REGEXP = /^(\d+)(!?)([nace])$/
+
+    def self.bban_format_length(format)
+      if format =~ BBAN_REGEXP
+        return $1.to_i
+      else
+        raise ArgumentError, "#{format} is not a valid bban format"
+      end
+    end
 
     def self.bban_format_to_format_string(format)
       if format =~ BBAN_REGEXP

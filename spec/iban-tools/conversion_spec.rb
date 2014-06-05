@@ -49,6 +49,7 @@ module IBANTools
       'MK07300000000042425' => {bank_code: '300', account_number: '424', check_digits: '25'},
       'MR1300020001010000123456753' => {bank_code: '20', branch_code: '101', account_number: '1234567', check_digits: '53'},
       'MT84MALT011000012345MTLCAST001S' => {bank_code: 'MALT', branch_code: '1100', account_number: '12345MTLCAST001S'},
+      'MU17BOMM0101101030300200000MUR' => {bank_code: 'BOMM01', branch_code: '1', account_number: '101030300200000MUR'},
       'NL91ABNA0417164300' => {bank_code: 'ABNA', account_number: '417164300'},
       'NO9386011117947' => {bank_code: '8601', account_number: '111794', check_digit: '7'},
       'PK36SCBL0000001123456702' => {bank_code: 'SCBL', account_number: '1123456702'},
@@ -90,16 +91,16 @@ module IBANTools
             local2iban('ES', :account_number => '20811234761234567890')
           iban.should be_valid_check_digits
         end
-	IBAN_FOR_TEST.each do |iban,local|
-	  it "returns valid IBAN for #{iban}" do
-	    Conversion.local2iban(iban[0..1], local).
-	      should be_valid_check_digits
-	  end
-	  it "returns the correct IBAN for #{iban}" do
-	    Conversion.local2iban(iban[0..1], local).code.
-	      should == iban
-	  end
-	end
+        IBAN_FOR_TEST.each do |iban,local|
+          it "returns valid IBAN for #{iban}" do
+            Conversion.local2iban(iban[0..1], local).
+              should be_valid_check_digits
+          end
+          it "returns the correct IBAN for #{iban}" do
+            Conversion.local2iban(iban[0..1], local).code.
+              should == iban
+          end
+        end
       end
       it 'returns valid IBAN when numeric-partial has leading zeroes' do
         iban = Conversion.local2iban('DE', :blz => '01234567', :account_number => '0123456789')
@@ -142,12 +143,12 @@ module IBANTools
           local = Conversion.iban2local 'ES', '20811234761234567890'
           local.should == { :account_number => '20811234761234567890' }
         end
-	IBAN_FOR_TEST.each do |iban,local|
-	  it "returns valid local data for #{iban}" do
-	    Conversion.iban2local(iban[0..1], iban[4..-1]).
-	      should == local
-	  end
-	end
+        IBAN_FOR_TEST.each do |iban,local|
+          it "returns valid local data for #{iban}" do
+            Conversion.iban2local(iban[0..1], iban[4..-1]).
+              should == local
+          end
+        end
       end
     end
 

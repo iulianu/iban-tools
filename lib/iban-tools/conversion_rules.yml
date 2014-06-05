@@ -217,6 +217,11 @@
   branch_code: 5!n
   account_number: 18!c
 
+'MU':
+  bank_code: ['4!a', '2!n']
+  branch_code: 2!n
+  account_number: ['15!n', '3!a']
+
 'NL':
   bank_code: 4!a
   account_number: 10!n
