@@ -1,11 +1,11 @@
 'DE':
-  blz: ['\d{8}', "%08d"]
-  account_number: ['\d{10}', "%010d"]
+  blz: '8!n'
+  account_number: '10!n'
 
 'ES':
-  account_number: ['\d{20}', "%020d"]
+  account_number: '20!n'
 
 'SK':
-  bank_code: ['\d{4}', "%04d"]
-  account_prefix: ['\d{6}', "%06d"]
-  account_number: ['\d{10}', "%010d"]
+  bank_code: '4!n'
+  account_prefix: '6!n'
+  account_number: '10!n'

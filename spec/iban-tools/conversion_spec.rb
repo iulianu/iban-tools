@@ -142,5 +142,51 @@ module IBANTools
         end
       end
     end
+
+    describe '::bban_format_to_format_string' do
+      {
+        '12!n' => '%012d',
+        '12n' => '%012d',
+        '12!a' => '%012s',
+        '12a' => '%012s',
+        '12!c' => '%012s',
+        '12c' => '%012s',
+        '2!e' => '  ',
+        '2e' => '  ',
+      }.each do |format,regexp|
+        it "should parse #{format}" do
+          Conversion.send(:bban_format_to_format_string, format).
+            should == regexp
+        end
+      end
+      it "should raise exception for blah" do
+        expect {
+          Conversion.send(:bban_format_to_regexp, "blah")
+        }.to raise_error(ArgumentError)
+      end
+    end
+
+    describe '::bban_format_to_regexp' do
+      {
+        '12!n' => '[0-9]{12}',
+        '12n' => '[0-9]{,12}',
+        '12!a' => '[A-Z]{12}',
+        '12a' => '[A-Z]{,12}',
+        '12!c' => '[a-zA-Z0-9]{12}',
+        '12c' => '[a-zA-Z0-9]{,12}',
+        '2!e' => '[ ]{2}',
+        '2e' => '[ ]{,2}',
+      }.each do |format,regexp|
+        it "should parse #{format}" do
+          Conversion.send(:bban_format_to_regexp, format).
+            should == regexp
+        end
+      end
+      it "should raise exception for blah" do
+        expect {
+          Conversion.send(:bban_format_to_regexp, "blah")
+        }.to raise_error(ArgumentError)
+      end
+    end
   end
 end
