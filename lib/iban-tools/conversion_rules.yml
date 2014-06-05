@@ -1,6 +1,22 @@
 # Data from http://www.swift.com/dsp/resources/documents/IBAN_Registry.pdf
 # And the parsed, readable table on
 # http://en.wikipedia.org/wiki/International_Bank_Account_Number
+#
+# The values of the hashes follow the rules in the IBAN_Registry PDF:
+#
+# Length:
+# nn! - mixed length
+# nn  - maximum length
+#
+# Character representation
+# n - Digits (numeric characters 0 to 9 only)
+# a - Upper case letters (alphabetic characters A-Z only)
+# c - Upper and lower case alphanumeric characters (A-Z, a-z and 0-9)
+# e - blank space
+#
+# If a field has more than one kind of character representation, an array can
+# be used (see MU)
+#
 
 'AD':
   bank_code: 4!n
