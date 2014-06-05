@@ -5,8 +5,10 @@ module IBANTools
       config = load_config country_code
 
       bban = config.map do |key, value|
-        bban_format_to_format_string(value) %
+        ret = bban_format_to_format_string(value) %
           data[key.to_sym]
+        # "%05s" % "a" -> "    a" and not "0000a"
+        ret.gsub(/ /, '0')
       end.join('')
 
       check_digits = "%02d" % checksum(country_code, bban)
@@ -22,6 +24,7 @@ module IBANTools
       config.map do |key, value|
         regexp = /^#{bban_format_to_regexp(value)}/
         local[key.to_sym] = bban.scan(regexp).first.sub(/^0+/, '')
+        local[key.to_sym] = '0' if local[key.to_sym] == ''
         bban.sub! regexp, ''
       end
       local

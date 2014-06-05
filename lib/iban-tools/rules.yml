@@ -260,6 +260,11 @@
   length: 25
   bban_pattern: '\d{21}'
 
+'PS':
+  # Palestinian
+  length: 29
+  bban_pattern: '[A-Z0-9]{4}\d{21}'
+
 'QA':
   # Quatar
   length: 29
@@ -315,3 +320,7 @@
   length: 29
   bban_pattern: '\d{25}'
 
+'VG':
+  # Virgin Islands
+  length: 24
+  bban_pattern: '[A-Z0-9]{4}\d{16}'
