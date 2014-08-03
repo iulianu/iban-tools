@@ -280,3 +280,12 @@
   length: 26
   bban_pattern: '\d{5}[A-Z0-9]{17}'
 
+'YY':
+  # Test country 1
+  length: 34
+  bban_pattern: '[A-Z]{4}\d{8}[A-Z0-9]{18}'
+
+'ZZ':
+  # Test country 2
+  length: 35
+  bban_pattern: '[A-Z]{4}\d{9}[A-Z0-9]{18}'
