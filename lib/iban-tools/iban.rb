@@ -47,6 +47,31 @@ module IBANTools
       @code[4..-1]
     end
 
+    def bban_fields(rules = nil)
+      rules ||= IBAN.default_rules
+      rules[country_code]['bban_pattern'].match(bban) || {}
+    end
+
+    # Return country-specific bank identifier
+    def bank_id(rules = nil)
+      fields = bban_fields(rules)
+      if fields.names.include? 'bank_id'
+        fields[:bank_id]
+      else
+        nil
+      end
+    end
+
+    # Return country-specific account number
+    def account_number(rules = nil)
+      fields = bban_fields(rules)
+      if fields.names.include? 'account_number'
+        fields[:account_number].sub(/^0+/, '')
+      else
+        nil
+      end
+    end
+
     def valid_check_digits?
       numerify.to_i % 97 == 1
     end
@@ -82,6 +107,13 @@ module IBANTools
     # Load and cache the default rules from rules.yml
     def self.default_rules
       @default_rules ||= IBANRules.defaults
+    end
+
+    # Generate correct check digits and change them in IBAN
+    def generate_check_digits
+      @code[2..3] = '00'
+      modulo = numerify.to_i % 97
+      @code[2..3] = sprintf("%02d", 98 - modulo)
     end
 
   end
