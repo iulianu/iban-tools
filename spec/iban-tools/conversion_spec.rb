@@ -26,6 +26,12 @@ module IBANTools
           iban.should be_valid_check_digits
         end
       end
+      it 'returns valid IBAN when numeric-partial has leading zeroes' do
+        iban = Conversion.local2iban('DE', :blz => '01234567', :account_number => '0123456789')
+        iban.code.should == 'DE81012345670123456789'
+        iban.should be_valid_check_digits
+        iban.validation_errors.should eq([])
+      end
     end
 
     describe '::iban2local' do
