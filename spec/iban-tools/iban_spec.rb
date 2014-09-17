@@ -13,7 +13,7 @@ module IBANTools
 
       it "should validate IBAN code" do
         # Using example from http://en.wikipedia.org/wiki/IBAN#Calculating_and_validating_IBAN_checksums
-        IBAN.valid?( "GB82WEST12345698765432", @rules ).should be_true
+        IBAN.valid?( "GB82WEST12345698765432", @rules ).should be_truthy
       end
 
       it "should reject IBAN code with invalid characters" do
@@ -42,18 +42,18 @@ module IBANTools
       end
 
       it "should reject IBAN code with invalid check digits" do
-        IBAN.valid?( "GB99 WEST 1234 5698 7654 32", @rules ).should be_false
+        IBAN.valid?( "GB99 WEST 1234 5698 7654 32", @rules ).should be_falsey
 
         IBAN.new("GB99 WEST 1234 5698 7654 32").validation_errors(@rules).
           should == [:bad_check_digits]
       end
 
       it "should handle non-string ibans" do
-        IBAN.valid?( 12345698765432 ).should be_false
+        IBAN.valid?( 12345698765432 ).should be_falsey
       end
 
       it "should reject IBAN which is nil" do
-        IBAN.valid?( nil ).should be_false
+        IBAN.valid?( nil ).should be_falsey
       end
     end
 
@@ -165,7 +165,7 @@ module IBANTools
       it "should fail known pattern violations" do
         # This IBAN has valid check digits
         # but should fail because of pattern violation
-        IBAN.valid?("RO7999991B31007593840000").should be_false
+        IBAN.valid?("RO7999991B31007593840000").should be_falsey
       end
 
     end
