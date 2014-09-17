@@ -5,7 +5,11 @@ module IBANTools
       config = load_config country_code
 
       bban = config.map do |key, value|
-        value[1] % data[key.to_sym]
+        insert_pattern = value[1]
+        # apply integer-typecast if it is intended to format as decimal-value
+        # this prevent mis-interpretation of integer with leading zeros into octal number!
+        insert_value = insert_pattern.include?('d') ? data[key.to_sym].to_i : data[key.to_sym]
+        insert_pattern % insert_value
       end.join('')
 
       check_digits = "%02d" % checksum(country_code, bban)
