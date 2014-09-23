@@ -32,6 +32,25 @@ module IBANTools
         iban.should be_valid_check_digits
         iban.validation_errors.should eq([])
       end
+
+
+      it 'returns valid IBAN when string-partials are included' do
+        # pseudo conversion rule for ireland IE
+        allow(Conversion).to receive(:load_config) do
+          {
+            prefix: ['\s{8}', "%08s"],
+            numeric_suffix: ['\d{6}', "%010d"]
+          }
+        end
+        iban = Conversion.local2iban('IE', :prefix => 'ABCD0123', :numeric_suffix => '0123456789')
+        iban.code.should == 'IE83ABCD01230123456789'
+        iban.should be_valid_check_digits
+        iban.validation_errors.should eq([])
+      end
+
+
+
+
     end
 
     describe '::iban2local' do
