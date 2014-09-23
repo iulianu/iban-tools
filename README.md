@@ -8,7 +8,7 @@ iban-tools is a Ruby library for manipulating and validating IBAN account number
 
     gem install iban-tools
 
-    The gem should be compatible with MRI 1.8 and 1.9.
+    The gem should be compatible with most Ruby versions.
 
 ## USAGE
 
