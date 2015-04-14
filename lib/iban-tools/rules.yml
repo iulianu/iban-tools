@@ -45,6 +45,11 @@
   length: 22
   bban_pattern: '[A-Z]{4}[A-Z0-9]{14}'
 
+'BR':
+  # Brazil
+  length: 29
+  bban_pattern: '\d{23}[A-Z0-9]{2}'
+
 'CH':
   # Switzerland
   length: 21
@@ -304,4 +309,9 @@
   # Turkey
   length: 26
   bban_pattern: '\d{5}[A-Z0-9]{17}'
+
+'UA':
+  # Ukraine
+  length: 29
+  bban_pattern: '\d{25}'
 
