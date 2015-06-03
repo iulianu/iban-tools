@@ -8,7 +8,7 @@ module IBANTools
         d = data[key.to_sym].dup
         ret = [values].flatten.map do |value|
           l = bban_format_length(value)
-          r = bban_format_to_format_string(value) % d[0..(l-1)]
+          r = bban_format_to_format_string(value) % bban_format_cast(value, d[0..(l-1)])
           d[0..(l-1)] = ''
           r
         end.join('')
@@ -63,6 +63,18 @@ module IBANTools
                  when 'c' then 's'
                  end
         return format
+      else
+        raise ArgumentError, "#{format} is not a valid bban format"
+      end
+    end
+
+    def self.bban_format_cast(format, value)
+      if format =~ BBAN_REGEXP
+        if $3 == "n"
+          return value.to_i
+        else
+          return value
+        end
       else
         raise ArgumentError, "#{format} is not a valid bban format"
       end
