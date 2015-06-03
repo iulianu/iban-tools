@@ -114,8 +114,8 @@ module IBANTools
         # pseudo conversion rule for ireland IE
         allow(Conversion).to receive(:load_config) do
           {
-            prefix: ['\s{8}', "%08s"],
-            numeric_suffix: ['\d{6}', "%010d"]
+            prefix: '8c',
+            numeric_suffix: '10n'
           }
         end
         iban = Conversion.local2iban('IE', :prefix => 'ABCD0123', :numeric_suffix => '0123456789')
