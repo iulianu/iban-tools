@@ -40,6 +40,11 @@
   length: 22
   bban_pattern: '[A-Z]{4}[A-Z0-9]{14}'
 
+'BR':
+  # Brazil
+  length: 29
+  bban_pattern: '[0-9]{23}[0-9A-Z]{2}'
+
 'CH':
   # Switzerland
   length: 21

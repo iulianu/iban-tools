@@ -1,7 +1,5 @@
 # vim:ts=2:sw=2:et:
 
-require 'iban-tools'
-
 module IBANTools
   describe IBAN do
   
@@ -13,7 +11,7 @@ module IBANTools
 
       it "should validate IBAN code" do
         # Using example from http://en.wikipedia.org/wiki/IBAN#Calculating_and_validating_IBAN_checksums
-        IBAN.valid?( "GB82WEST12345698765432", @rules ).should be_true
+        IBAN.valid?( "GB82WEST12345698765432", @rules ).should be true
       end
 
       it "should reject IBAN code with invalid characters" do
@@ -42,7 +40,7 @@ module IBANTools
       end
 
       it "should reject IBAN code with invalid check digits" do
-        IBAN.valid?( "GB99 WEST 1234 5698 7654 32", @rules ).should be_false
+        IBAN.valid?( "GB99 WEST 1234 5698 7654 32", @rules ).should be false
 
         IBAN.new("GB99 WEST 1234 5698 7654 32").validation_errors(@rules).
           should == [:bad_check_digits]
@@ -80,7 +78,7 @@ module IBANTools
       IBAN.new("NO9386011117947").bban.should == "86011117947"
     end
 
-    describe "with default rules" do
+    describe "with default rules"   do
       
       # Rules are loaded from lib/iban-tools/rules.yml
       # Samples from http://www.tbg5-finance.org/?ibandocs.shtml/
@@ -140,10 +138,11 @@ module IBANTools
         "SK3112000000198742637541",
         "SM86U0322509800000000270100",
         "TN5914207207100707129648",
-        "TR330006100519786457841326"
+        "TR330006100519786457841326",
+        "BR8700000000028110000219371C1"
       ].each do |iban_code| 
          describe iban_code do
-           it "should be valid" do
+           it "should be valid"  do
              IBAN.new(iban_code).validation_errors.should == []
            end
          end
@@ -152,7 +151,7 @@ module IBANTools
       it "should fail known pattern violations" do
         # This IBAN has valid check digits
         # but should fail because of pattern violation
-        IBAN.valid?("RO7999991B31007593840000").should be_false
+        IBAN.valid?("RO7999991B31007593840000").should be false
       end
 
     end
