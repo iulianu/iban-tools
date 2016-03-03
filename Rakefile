@@ -1,11 +1,6 @@
-# vim:ts=2:sw=2:et:
+require "bundler/gem_tasks"
+require "rspec/core/rake_task"
 
-require 'rubygems'
-gem 'rspec', '>= 1.2.4'
-require 'spec/rake/spectask'
+RSpec::Core::RakeTask.new(:spec)
 
-Spec::Rake::SpecTask.new do |t|
-  t.libs << 'lib'
-  t.spec_opts = ["--color" ]
-end
-
+task :default => :spec
