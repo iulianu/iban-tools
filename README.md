@@ -2,7 +2,7 @@
 
 iban-tools is a Ruby library for manipulating and validating IBAN account numbers. You can [read more about IBAN](http://en.wikipedia.org/wiki/International_Bank_Account_Number) on Wikipedia
 
-[![Build Status](https://travis-ci.org/alphasights/iban-tools.svg)](https://travis-ci.org/alphasights/iban-tools)
+[![Build Status](https://travis-ci.org/alphasights/iban-tools.svg?branch=master)](https://travis-ci.org/alphasights/iban-tools)
 
 ## INSTALLATION
 
