@@ -1,11 +1,322 @@
+# Data from http://www.swift.com/dsp/resources/documents/IBAN_Registry.pdf
+# And the parsed, readable table on
+# http://en.wikipedia.org/wiki/International_Bank_Account_Number
+#
+# The values of the hashes follow the rules in the IBAN_Registry PDF:
+#
+# Length:
+# nn! - mixed length
+# nn  - maximum length
+#
+# Character representation
+# n - Digits (numeric characters 0 to 9 only)
+# a - Upper case letters (alphabetic characters A-Z only)
+# c - Upper and lower case alphanumeric characters (A-Z, a-z and 0-9)
+# e - blank space
+#
+# If a field has more than one kind of character representation, an array can
+# be used (see MU)
+#
+
+'AD':
+  bank_code: 4!n
+  branch_code: 4!n
+  account_number: 12!n
+
+'AE':
+  bank_code: 3!n
+  account_number: 16!n
+
+'AL':
+  bank_code: 3!n
+  branch_code: 4!n
+  check_digit: 1!n
+  account_number: 16!n
+
+'AT':
+  bank_code: 5!n
+  account_number: 11!n
+
+'AZ':
+  bank_code: 4!c
+  account_number: 20!n
+
+'BA':
+  bank_code: 3!n
+  branch_code: 3!n
+  account_number: 8!n
+  check_digits: 2!n
+
+'BE':
+  bank_code: 3!n
+  account_number: 7!n
+  check_digits: 2!n
+
+'BG':
+  bank_code: 4!a
+  branch_code: 4!n
+  account_type: 2!n
+  account_number: 8!c
+
+'BH':
+  bank_code: 4!a
+  account_number: 14!c
+
+'CH':
+  bank_code: 5!n
+  account_number: 12!c
+
+'CY':
+  bank_code: 3!n
+  branch_code: 5!n
+  account_number: 16!c
+
+'CZ':
+  bank_code: 4!n
+  account_prefix: 6!n
+  account_number: 10!n
+
 'DE':
-  blz: ['\d{8}', "%08d"]
-  account_number: ['\d{10}', "%010d"]
+  blz: 8!n
+  account_number: 10!n
+
+'DK':
+  bank_code: 4!n
+  account_number: 10!n
+
+'DO':
+  bank_code: 4!a
+  account_number: 20!n
+
+'EE':
+  bank_code: 2!n
+  branch_code: 2!n
+  account_number: 10!n
+  check_digits: 2!n
 
 'ES':
-  account_number: ['\d{20}', "%020d"]
+  account_number: 20!n
+
+'FI':
+  bank_code: 6!n
+  account_number: 7!n
+  check_digit: 1!n
+
+'FO':
+  bank_code: 4!n
+  account_number: 9!n
+  check_digit: 1!n
+
+'FR':
+  bank_code: 5!n
+  branch_code: 5!n
+  account_number: 11!c
+  check_digits: 2!n
+
+'GB':
+  bank_code: 4!a
+  branch_code: 6!n
+  account_number: 8!n
+
+'GE':
+  bank_code: 2!c
+  account_number: 16!n
+
+'GI':
+  bank_code: 4!a
+  account_number: 15!c
+
+'GL':
+  bank_code: 4!n
+  account_number: 10!n
+
+'GR':
+  bank_code: 3!n
+  branch_code: 4!n
+  account_number: 16!c
+
+'HR':
+  bank_code: 7!n
+  account_number: 10!n
+
+'HU':
+  bank_code: 3!n
+  branch_code: 4!n
+  account_prefix: 1!n
+  account_number: 15!n
+  check_digit: 1!n
+
+'IE':
+  bank_code: 4!c
+  branch_code: 6!c
+  account_number: 8n
+
+'IL':
+  bank_code: 3!n
+  branch_code: 3!n
+  account_number: 13!n
+
+'IS':
+  bank_code: 4!n
+  branch_code: 2!n
+  account_number: 6!n
+  kennitala: 10!n
+
+'IT':
+  check_char: 1!a
+  bank_code: 5!n
+  branch_code: 5!n
+  account_number: 12!c
+
+'JO':
+  bank_code: 4!a
+  branch_code: 4!n
+  zeros: 8!n
+  account_number: 10!n
+
+'KW':
+  bank_code: 4!a
+  account_number: 22!n
+
+'KZ':
+  bank_code: 3!n
+  account_number: 13!c
+
+'LB':
+  bank_code: 4!n
+  account_number: 20!c
+
+'LI':
+  bank_code: 5!n
+  account_number: 12!c
+
+'LT':
+  bank_code: 5!n
+  account_number: 11!n
+
+'LU':
+  bank_code: 3!n
+  account_number: 13!c
+
+'LV':
+  bank_code: 4!a
+  account_number: 13!c
+
+'MC':
+  bank_code: 5!n
+  branch_code: 5!n
+  account_number: 11!c
+  check_digits: 2!n
+
+'MD':
+  bank_code: 2!c
+  account_number: 18!n
+
+'ME':
+  bank_code: 3!n
+  account_number: 13!n
+  check_digits: 2!n
+
+'MK':
+  bank_code: 3!n
+  account_number: 10!c
+  check_digits: 2!n
+
+'MR':
+  bank_code: 5!n
+  branch_code: 5!n
+  account_number: 11!n
+  check_digits: 2!n
+
+'MT':
+  bank_code: 4!a
+  branch_code: 5!n
+  account_number: 18!c
+
+'MU':
+  bank_code: ['4!a', '2!n']
+  branch_code: 2!n
+  account_number: ['15!n', '3!a']
+
+'NL':
+  bank_code: 4!a
+  account_number: 10!n
+
+'NO':
+  # Don't remove the quotes here, NO == no == false in yaml.
+  bank_code: 4!n
+  account_number: 6!n
+  check_digit: 1!n
+
+'PK':
+  bank_code: 4!c
+  account_number: 16!n
+
+'PL':
+  bank_code: 3!n
+  branch_code: 4!n
+  check_digit: 1!n
+  account_number: 16!n
+
+'PS':
+  bank_code: 4!c
+  account_number: 21!n
+
+'PT':
+  bank_code: 4!n
+  branch_code: 4!n
+  account_number: 11!n
+  check_digits: 2!n
+
+'QA':
+  bank_code: 4!a
+  account_number: 21!c
+
+'RO':
+  bank_code: 4!a
+  account_number: 16!c
+
+'RS':
+  bank_code: 3!n
+  account_number: 13!n
+  check_digits: 2!n
+
+'SA':
+  bank_code: 2!n
+  account_number: 18!c
+
+'SE':
+  bank_code: 3!n
+  account_number: 16!n
+  check_digit: 1!n
+
+'SI':
+  bank_code: 2!n
+  branch_code: 3!n
+  account_number: 8!n
+  check_digits: 2!n
 
 'SK':
-  bank_code: ['\d{4}', "%04d"]
-  account_prefix: ['\d{6}', "%06d"]
-  account_number: ['\d{10}', "%010d"]
+  bank_code: 4!n
+  account_prefix: 6!n
+  account_number: 10!n
+
+'SM':
+  check_char: 1!a
+  bank_code: 5!n
+  branch_code: 5!n
+  account_number: 12!c
+
+'TN':
+  bank_code: 2!n
+  branch_code: 3!n
+  account_number: 15!n
+
+'TR':
+  bank_code: 5!n
+  reserved: 1!c
+  account_number: 16!c
+
+'VG':
+  bank_code: 4!c
+  account_number: 16!n
