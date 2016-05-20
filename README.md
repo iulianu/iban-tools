@@ -37,4 +37,4 @@ Pretty print, canonicalize, and extract fields from an IBAN code
 
 ## Credit
 
-[Iulianu](http://github.com/iulianu) wrote [iban-tools](http://github.com/iulianu/iban-tools). [AlphaSights](https://coderwall.com/team/alphasights) is maintaining the gem.
+[Iulianu](http://github.com/iulianu) originally wrote [iban-tools](http://github.com/iulianu/iban-tools). The team at [AlphaSights](https://engineering.alphasights.com) is currently maintaining the gem.
