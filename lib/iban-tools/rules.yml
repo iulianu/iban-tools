@@ -20,6 +20,11 @@
   length: 20
   bban_pattern: '\d{16}'
 
+'AZ':
+  # Azerbaijan, Republic of
+  length: 28
+  bban_pattern: '\d[0-9]{2}[A-Z]{4}[A-Z0-9]{20}'
+
 'BA':
   # Bosnia
   length: 20
@@ -40,10 +45,20 @@
   length: 22
   bban_pattern: '[A-Z]{4}[A-Z0-9]{14}'
 
+'BR':
+  # Brazil
+  length: 29
+  bban_pattern: '\d[0-9]{2}[0-9]{8}[0-9]{5}[0-9]{10}[A-Z]{1}[A-Z0-9]{1}'
+
 'CH':
   # Switzerland
   length: 21
   bban_pattern: '\d{5}[A-Z0-9]{12}'
+
+'CR':
+  # Costa Rica
+  length: 21
+  bban_pattern: '\d[0-9]{2}[0-9]{3}[0-9]{14}'
 
 'CY':
   # Cyprus
@@ -120,6 +135,11 @@
   length: 27
   bban_pattern: '\d{7}[A-Z0-9]{16}'
 
+'GT':
+  # Guatemala
+  length: 28
+  bban_pattern: '\d[0-9]{2}[A-Z0-9]{4}[A-Z0-9]{20}'
+
 'HR':
   # Croatia
   length: 21
@@ -190,6 +210,11 @@
   length: 27
   bban_pattern: '\d{10}[A-Z0-9]{11}\d{2}'
 
+'MD':
+  # Moldova
+  length: 24
+  bban_pattern: '\d[0-9]{2}[A-Z0-9]{20}'
+
 'ME':
   # Montenegro
   length: 22
@@ -225,15 +250,30 @@
   length: 15
   bban_pattern: '\d{11}'
 
+'PK':
+  # Pakistan
+  length: 24
+  bban_pattern: '\d[0-9]{2}[A-Z]{4}[A-Z0-9]{16}'
+
 'PL':
   # Poland
   length: 28
   bban_pattern: '\d{8}[A-Z0-9]{16}'
 
+'PS':
+  # Palestinian Territory, Occupied
+  length: 29
+  bban_pattern: '\d[0-9]{2}[A-Z]{4}[A-Z0-9]{21}'
+
 'PT':
   # Portugal
   length: 25
   bban_pattern: '\d{21}'
+
+'QA':
+  # Qatar
+  length: 29
+  bban_pattern: '\d[0-9]{2}[A-Z]{4}[A-Z0-9]{21}'
 
 'RO':
   # Romania
@@ -270,6 +310,11 @@
   length: 27
   bban_pattern: '[A-Z]\d{10}[A-Z0-9]{12}'
 
+'TL':
+  # Timor-Leste
+  length: 23
+  bban_pattern: '\d[0-9]{2}[0-9]{3}[0-9]{14}[0-9]{2}'
+
 'TN':
   # Tunisia
   length: 24
@@ -284,3 +329,13 @@
   # Ukraine
   length: 29
   bban_pattern: '\d{25}'
+
+'VG':
+  # Virgin Islands, British
+  length: 24
+  bban_pattern: '\d[0-9]{2}[A-Z]{4}[0-9]{16}'
+
+'XK':
+  # Kosovo, Republic of
+  length: 20
+  bban_pattern: '\d[0-9]{2}[0-9]{4}[A-Z0-9]{12}'
