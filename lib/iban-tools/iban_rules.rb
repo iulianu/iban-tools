@@ -15,19 +15,23 @@ module IBANTools
     end
 
     def self.defaults
-      load_from_string( File.read(File.dirname(__FILE__) + "/rules.yml") )
+      load_from_string
     end
 
-    def self.load_from_string( string )
-      rule_hash = rule_hash(string)
-      rule_hash.each do |country_code, specs|
+    def self.load_from_string
+      hash_copy = rule_hash
+      hash_copy.each do |country_code, specs|
         specs["bban_pattern"] = Regexp.new("^" + specs["bban_pattern"] + "$")
       end
-      IBANRules.new(rule_hash)
+      IBANRules.new(hash_copy)
     end
     
-    def self.rule_hash(string)
-      YAML.load(string)
+    def self.rule_hash
+      YAML.load(file_path)
+    end
+    
+    def self.file_path
+      File.read(File.dirname(__FILE__) + "/rules.yml")
     end
 
   end
