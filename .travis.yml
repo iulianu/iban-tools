@@ -8,7 +8,7 @@ rvm:
   - ruby-head
   - rbx-2
   - jruby
-script: rspec
+script: bundle exec rspec spec
 before_install:
   - gem update --system
   - gem update bundler
