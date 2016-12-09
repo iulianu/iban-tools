@@ -34,6 +34,16 @@ Pretty print, canonicalize, and extract fields from an IBAN code
 
     iban.prettify
     => "RO49 AAAA 1B31 0075 9384 0000"
+    
+Convert  local account numbers to IBAN and back to local. 
+    
+    iban = IBANTools::IBAN.from_local('NO', bank_code: '9710', account_number: '1112222', check_digit: '7')
+    
+    iban.code
+    => "NO6197101112227"
+    
+    iban.to_local
+    => {:bank_code=>"9710", :account_number=>"111222", :check_digit=>"7"}
 
 ## Credit
 
