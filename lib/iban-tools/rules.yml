@@ -214,7 +214,12 @@
   # Montenegro
   length: 22
   bban_pattern: '\d{18}'
-
+  
+'MG':
+  # Madagascar
+  length: 27
+  bban_pattern: '\d{23}'
+  
 'MK':
   # Macedonia
   length: 19
