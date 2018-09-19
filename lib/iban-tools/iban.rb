@@ -52,18 +52,10 @@ module IBANTools
     end
 
     def numerify
-      numerified = ""
-      (@code[4..-1] + @code[0..3]).each_byte do |byte|
-        numerified += case byte
-        # 0..9
-        when 48..57 then byte.chr
-        # 'A'..'Z'
-        when 65..90 then (byte - 55).to_s # 55 = 'A'.ord + 10
-        else
-          raise RuntimeError.new("Unexpected byte '#{byte}' in IBAN code '#{prettify}'")
-        end
+      if bad_match = @code.match(/[^A-Z0-9]/)
+        raise RuntimeError.new("Unexpected byte '#{bad_match[0].bytes.first}' in IBAN code '#{prettify}'")
       end
-      numerified
+      (@code[4..-1] + @code[0..3]).gsub(/[A-Z]/) { |let| (let.ord - 55).to_s }
     end
 
     def to_s
