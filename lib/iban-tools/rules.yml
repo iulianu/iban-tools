@@ -185,6 +185,11 @@
   length: 26
   bban_pattern: '\d{22}'
 
+'IQ':
+  # Iraq
+  length: 23
+  bban_pattern: '[A-Z]{4}[0-9]{15}'
+
 'IT':
   # Italy
   length: 27
@@ -298,7 +303,7 @@
 'PS':
   # Palestinian
   length: 29
-  bban_pattern: '[A-Z0-9]{4}\d{21}'
+  bban_pattern: '[A-Z]{4}[A-Z0-9]{21}'
 
 'QA':
   # Quatar
@@ -323,7 +328,7 @@
 'SC':
   # Seychelles
   length: 31
-  bban_pattern: '[A-Z]{4}\d{4}\d{16}[A-Z]{3}'
+  bban_pattern: '[A-Z]{4}[0-9]{20}[A-Z]{3}'
 
 'SE':
   # Sweden
@@ -344,6 +349,11 @@
   # San Marino
   length: 27
   bban_pattern: '[A-Z]\d{10}[A-Z0-9]{12}'
+
+'SV':
+  # El Salvador
+  length: 28
+  bban_pattern: '[A-Z]{4}\d{20}'
 
 'TN':
   # Tunisia
