@@ -66,6 +66,7 @@ module IBANTools
       'SM86U0322509800000000270100' => {check_char: 'U', bank_code: '3225', branch_code: '9800', account_number: '270100'},
       'TN5914207207100707129648' => {bank_code: '14', branch_code: '207', account_number: '207100707129648'},
       'TR330006100519786457841326' => {bank_code: '61', reserved: '0', account_number: '519786457841326'},
+      'VA59001123000012345678' => {bank_code: '1', account_number: '123000012345678'},
       'VG96VPVG0000012345678901' => {bank_code: 'VPVG', account_number: '12345678901'},
     }
 
