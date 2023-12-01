@@ -174,7 +174,8 @@ module IBANTools
         "XK051212012345678906",
         "SC52BAHL01031234567890123456USD",
         "PS92PALS000000000400123456702",
-        "CR05015202001026284066"
+        "CR05015202001026284066",
+        "VA59001123000012345678"
       ].each do |iban_code|
         describe iban_code do
           it "should be valid" do

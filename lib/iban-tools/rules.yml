@@ -249,12 +249,12 @@
   # Montenegro
   length: 22
   bban_pattern: '\d{18}'
-  
+
 'MG':
   # Madagascar
   length: 27
   bban_pattern: '\d{23}'
-  
+
 'MK':
   # Macedonia
   length: 19
@@ -369,6 +369,11 @@
   # Ukraine
   length: 29
   bban_pattern: '\d{25}'
+
+'VA':
+  # Vatican City
+  length: 22
+  bban_pattern: '\d{18}'
 
 'VG':
   # Virgin Islands

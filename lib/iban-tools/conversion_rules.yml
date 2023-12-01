@@ -317,6 +317,10 @@
   reserved: 1!c
   account_number: 16!c
 
+'VA':
+  bank_code: 3!n
+  account_number: 15!n
+
 'VG':
   bank_code: 4!c
   account_number: 16!n
